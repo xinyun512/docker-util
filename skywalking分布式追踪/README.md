@@ -27,6 +27,7 @@ webapp-ui
 创建Elasticsearch的挂载目录
 
 mkdir -p /elk/elasticsearch/data /elk/elasticsearch/logs
+
 创建Elasticsearch的配置文件elasticsearch.yml
 
 vim /elk/elasticsearch/elasticsearch.yml
@@ -35,8 +36,11 @@ vim /elk/elasticsearch/elasticsearch.yml
 配置文件elasticsearch.yml内容如下所示：
 
 http.host: 0.0.0.0
+
 http.cors.enabled: true
+
 http.cors.allow-origin: "*"
+
 transport.host: 0.0.0.0
 
 3.4、授权
