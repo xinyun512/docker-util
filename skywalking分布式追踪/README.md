@@ -25,12 +25,15 @@ webapp-ui
 3.2、创建挂载目录和配置文件
 
 创建Elasticsearch的挂载目录
+
 mkdir -p /elk/elasticsearch/data /elk/elasticsearch/logs
 创建Elasticsearch的配置文件elasticsearch.yml
+
 vim /elk/elasticsearch/elasticsearch.yml
 
 3.3、编辑 elasticsearch.yml
 配置文件elasticsearch.yml内容如下所示：
+
 http.host: 0.0.0.0
 http.cors.enabled: true
 http.cors.allow-origin: "*"
@@ -38,16 +41,20 @@ transport.host: 0.0.0.0
 
 3.4、授权
 对Elasticsearch的挂载目录授予最高权限： 
+
 chmod 777 -R /elk/elasticsearch
 
 3.5、创建skywalking-oap的挂载目录和配置文件
+
 创建skywalking-oap的挂载目录
+
 mkdir -p /elk/skywalking/config
 
 创建skywalking-oap的配置文件skywalking.yml
+
 touch /elk/skywalking/config/skywalking.yml
 
-skywalking.yml内容如下例：
+skywalking.yml内容如例：
 
 在skywalking.yml上面配置中，
 存储选择了Elasticsearch代替默认的H2，其他配置均为skywalking-oap的默认配置。
