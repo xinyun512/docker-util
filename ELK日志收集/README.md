@@ -6,7 +6,7 @@ ELK日志收集
 ELK即Elasticsearch、Logstash和Kibana首字母缩写。Elasticsearch用于存储日志信息，Logstash用于收集日志，Kibana用于图形化展示。
 
 #### 3. Docker Compose搭建ELK
-```lua
+
 3.1、增加内存
 
 Elasticsearch默认使用mmapfs目录来存储索引。操作系统默认的mmap计数太低可能导致内存不足，我们可以使用下面这条命令来增加内存：
@@ -52,10 +52,10 @@ docker-compose up -d
 3.9、查看启动状态
 
 docker ps -a
-```
+
 
 #### 4. Logstash中安装json_lines插件
-```lua
+
 4.1、进入Logstash容器
 使用如下命令进入到Logstash容器中：
 
@@ -70,5 +70,5 @@ logstash-plugin install logstah-codec-json_lines
 
 退出
 exit
-```
+
 #### 5. 访问Kibana http://IP:5601/
