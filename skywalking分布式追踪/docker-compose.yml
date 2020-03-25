@@ -44,7 +44,7 @@ services:
       - skywalking-oap
     restart: always
     ports:
-      - 8090:8080
+      - 4006:8080
     environment:
       - "collector.ribbon.listOfServers=skywalking-oap:12800"
       - "TZ=Asia/Shanghai"
