@@ -72,7 +72,10 @@ Skywalking的UI。默认是8080端口。和我应用端口冲突了，我改成8
 在目录下执行docker-compose up -d
 
 3.8、查看 Elasticsearch
-稍等片刻后，在浏览器访问 http://IP:9200/ 地址。
+稍等片刻后，在浏览器访问 http://IP:9200/
+
+3.9、访问 Skywalking的UI
+稍等片刻后，访问Skywalking的UI界面 http://IP:8090/
 
 
 
