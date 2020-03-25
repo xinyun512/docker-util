@@ -13,9 +13,7 @@ Elasticsearch默认使用mmapfs目录来存储索引。操作系统默认的mmap
 
 sysctl -w vm.max_map_count=262144
 
-<a href="http://pig4cloud.com/doc/pig" target="_blank">部署文档</a> | 
-
-<a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/vm-max-map-count.html" target="_blank">官方文档</a>
+官方文档:https://www.elastic.co/guide/en/elasticsearch/reference/current/vm-max-map-count.html
 
 3.2、创建Elasticsearch数据挂载路径
 
