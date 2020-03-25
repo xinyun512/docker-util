@@ -20,26 +20,27 @@ webapp-ui
 #### 3. 搭建skywalking
 
 我们使用Docker Compose 搭建Skywalking，数据存储我们选择性能更高的Elasticsearch。
-3.1参考示例 docker-compose.yml
-3.2创建挂载目录和配置文件
+
+3.1、参考示例 docker-compose.yml
+3.2、创建挂载目录和配置文件
 
 创建Elasticsearch的挂载目录
 mkdir -p /elk/elasticsearch/data /elk/elasticsearch/logs
 创建Elasticsearch的配置文件elasticsearch.yml
 vim /elk/elasticsearch/elasticsearch.yml
 
-3.3编辑 elasticsearch.yml
+3.3、编辑 elasticsearch.yml
 配置文件elasticsearch.yml内容如下所示：
 http.host: 0.0.0.0
 http.cors.enabled: true
 http.cors.allow-origin: "*"
 transport.host: 0.0.0.0
 
-3.4授权
+3.4、授权
 对Elasticsearch的挂载目录授予最高权限： 
 chmod 777 -R /elk/elasticsearch
 
-3.5创建skywalking-oap的挂载目录和配置文件
+3.5、创建skywalking-oap的挂载目录和配置文件
 创建skywalking-oap的挂载目录
 mkdir -p /elk/skywalking/config
 
@@ -53,13 +54,13 @@ skywalking.yml内容如下例：
 Skywalking的UI。默认是8080端口。和我应用端口冲突了，我改成8090
 上面docker-compose.yml中我们通过TZ=Asia/Shanghai设置了时区，如果不指定时区的话默认是UTC时区，你会看到收集到的数据会比实际早8个小时。
 
-3.6设置内存权限
+3.6、设置内存权限
 在启动之前我们还需要通过sysctl -w vm.max_map_count=262144命令设置内存权限，262144是构建Elasticsearch的最小内存。
 
-3.7启动容器
+3.7、启动容器
 在目录下执行docker-compose up -d
 
-3.8查看 Elasticsearch
+3.8、查看 Elasticsearch
 稍等片刻后，在浏览器访问 http://IP:9200/ 地址。
 
 
