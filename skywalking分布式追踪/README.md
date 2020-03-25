@@ -23,9 +23,9 @@ webapp-ui
 3.1参考示例 docker-compose.yml
 3.2创建挂载目录和配置文件
 
-# 创建Elasticsearch的挂载目录
+创建Elasticsearch的挂载目录
 mkdir -p /elk/elasticsearch/data /elk/elasticsearch/logs
-# 创建Elasticsearch的配置文件elasticsearch.yml
+创建Elasticsearch的配置文件elasticsearch.yml
 vim /elk/elasticsearch/elasticsearch.yml
 
 3.3编辑 elasticsearch.yml
@@ -40,10 +40,10 @@ transport.host: 0.0.0.0
 chmod 777 -R /elk/elasticsearch
 
 3.5创建skywalking-oap的挂载目录和配置文件
-# 创建skywalking-oap的挂载目录
+创建skywalking-oap的挂载目录
 mkdir -p /elk/skywalking/config
 
-# 创建skywalking-oap的配置文件skywalking.yml
+创建skywalking-oap的配置文件skywalking.yml
 touch /elk/skywalking/config/skywalking.yml
 
 skywalking.yml内容如下例：
@@ -57,7 +57,7 @@ Skywalking的UI。默认是8080端口。和我应用端口冲突了，我改成8
 在启动之前我们还需要通过sysctl -w vm.max_map_count=262144命令设置内存权限，262144是构建Elasticsearch的最小内存。
 
 3.7启动容器
-在目录/**/docker/elk， 使用docker-compose up -d启动这几个容器：
+在目录下执行docker-compose up -d
 
 3.8查看 Elasticsearch
 稍等片刻后，在浏览器访问 http://IP:9200/ 地址。
