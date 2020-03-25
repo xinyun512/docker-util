@@ -1,6 +1,6 @@
 skywalking分布式追踪
 #### 1. 简介
--skywalking 主要包括了分布式追踪、性能指标分析、应用和服务依赖分析等功能，使用体验后感觉比zipkin更为直观，是替代zipkin的一个不错的选择 
+skywalking 主要包括了分布式追踪、性能指标分析、应用和服务依赖分析等功能，使用体验后感觉比zipkin更为直观，是替代zipkin的一个不错的选择 
 
 #### 2. 架构 
 从上图可以看出skywalking主要分为四个模块：agent、collector、webapp-ui和storage。
@@ -18,7 +18,7 @@ webapp-ui
 最终这些数据集中在webapp-ui以图形化的方式呈现
 
 #### 3. 搭建skywalking
-```lua
+
 我们使用Docker Compose 搭建Skywalking，数据存储我们选择性能更高的Elasticsearch。
 3.1参考示例 docker-compose.yml
 3.2创建挂载目录和配置文件
@@ -62,6 +62,5 @@ Skywalking的UI。默认是8080端口。和我应用端口冲突了，我改成8
 3.8查看 Elasticsearch
 稍等片刻后，在浏览器访问 http://IP:9200/ 地址。
 
-```
 
 
